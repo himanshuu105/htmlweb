@@ -1,30 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Alex Morgan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Syne:wght@400;500;600;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-
 <body>
-    <h1>
-        Hello World!
-    </h1>
-    <p>
-        iores! Est aliquid harum voluptate possimus enim quia pariatur doloribus rem tempora,
-        minus, cupiditate dicta excepturi ex atque? Illo earum et voluptatum.
-    </p>
-    <div class="container">
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque. Voluptas, cumque. Voluptas,
-            </p>
-            <h1>
-                Hello World!
-            </h1>
-        </div>
-        <script src="script.js"></script>
-</body>
 
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">AM<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-track">
+        <span class="toggle-icon sun">☀</span>
+        <span class="toggle-icon moon">☽</span>
+        <span class="toggle-thumb"></span>
+      </span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-eyebrow">
+      <span class="mono tag">Designer &amp; Developer</span>
+      <span class="hero-line"></span>
+      <span class="mono tag">New York, USA</span>
+    </div>
+    <h1 class="hero-name">
+      <span class="name-word">Alex</span>
+      <span class="name-word italic">Morgan</span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-sub">I craft thoughtful digital experiences where precision meets purpose — design meets code.</p>
+      <a href="#work" class="btn-primary">
+        <span>View Work</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span class="mono">scroll</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <span class="mono section-num">01</span>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-statement">
+        <p class="big-text">I build things <em>that matter.</em></p>
+        <p class="big-text">With intent. With craft.</p>
+      </div>
+      <div class="about-content">
+        <p>With over 6 years of experience spanning product design, front-end engineering, and creative direction, I work at the intersection of aesthetics and functionality.</p>
+        <p>I believe great digital products are born from obsessive attention to detail, empathy for the user, and a relentless drive for clarity. Every pixel, every interaction — intentional.</p>
+        <p>Currently open to select freelance projects and full-time opportunities.</p>
+        <div class="skills-grid">
+          <span class="skill">UI Design</span>
+          <span class="skill">React</span>
+          <span class="skill">TypeScript</span>
+          <span class="skill">Figma</span>
+          <span class="skill">Next.js</span>
+          <span class="skill">Motion</span>
+          <span class="skill">Node.js</span>
+          <span class="skill">CSS / Sass</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="section-header">
+      <span class="mono section-num">02</span>
+      <h2 class="section-title">Selected Work</h2>
+    </div>
+    <div class="projects">
+
+      <a href="#" class="project-card">
+        <div class="project-top">
+          <span class="project-index mono">01</span>
+          <div class="project-tags">
+            <span>Design System</span><span>React</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Lumen</h3>
+          <p class="project-desc">End-to-end design system for a Series B fintech startup. 240+ components, full token architecture, and documentation site.</p>
+        </div>
+        <div class="project-footer">
+          <span class="project-year mono">2024</span>
+          <span class="project-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="#" class="project-card">
+        <div class="project-top">
+          <span class="project-index mono">02</span>
+          <div class="project-tags">
+            <span>Product</span><span>Next.js</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Orion</h3>
+          <p class="project-desc">Real-time analytics dashboard for enterprise clients. Complex charting, role-based access, dark/light theming.</p>
+        </div>
+        <div class="project-footer">
+          <span class="project-year mono">2023</span>
+          <span class="project-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="#" class="project-card">
+        <div class="project-top">
+          <span class="project-index mono">03</span>
+          <div class="project-tags">
+            <span>Editorial</span><span>Sanity</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Marble</h3>
+          <p class="project-desc">Long-form reading platform for independent journalists. Custom CMS, typography-first layout, reader tools.</p>
+        </div>
+        <div class="project-footer">
+          <span class="project-year mono">2023</span>
+          <span class="project-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="#" class="project-card">
+        <div class="project-top">
+          <span class="project-index mono">04</span>
+          <div class="project-tags">
+            <span>Mobile</span><span>UX Research</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Fold</h3>
+          <p class="project-desc">Consumer banking app redesign. Improved task completion by 38% via restructured navigation and simplified onboarding.</p>
+        </div>
+        <div class="project-footer">
+          <span class="project-year mono">2022</span>
+          <span class="project-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header">
+      <span class="mono section-num">03</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="exp-list">
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-period mono">2022 — Now</span>
+          <span class="exp-type mono">Full-time</span>
+        </div>
+        <div class="exp-detail">
+          <p class="exp-role">Lead Product Designer</p>
+          <p class="exp-company"><em>Horizon Labs</em></p>
+          <p class="exp-desc">Leading design for core product suite used by 180k+ daily active users. Manage a team of three designers and collaborate closely with engineering and product leadership.</p>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-period mono">2020 — 2022</span>
+          <span class="exp-type mono">Full-time</span>
+        </div>
+        <div class="exp-detail">
+          <p class="exp-role">Senior UI Engineer</p>
+          <p class="exp-company"><em>Verda Digital</em></p>
+          <p class="exp-desc">Built and maintained the company's component library in React. Contributed to design process and owned the front-end architecture of three flagship products.</p>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-period mono">2018 — 2020</span>
+          <span class="exp-type mono">Agency</span>
+        </div>
+        <div class="exp-detail">
+          <p class="exp-role">UX Designer</p>
+          <p class="exp-company"><em>Studio Flux</em></p>
+          <p class="exp-desc">Worked with clients across fintech, healthcare, and e-commerce. Delivered end-to-end design from research to final handoff.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="mono section-num">04</span>
+      <h2 class="section-title">Contact</h2>
+    </div>
+    <div class="contact-block">
+      <h2 class="contact-heading">Let's work<br/><em>together.</em></h2>
+      <p class="contact-sub">Have a project or just want to connect? Drop me a line — I reply within 24 hours.</p>
+      <a href="mailto:hello@alexmorgan.co" class="contact-email">hello@alexmorgan.co</a>
+      <div class="social-links">
+        <a href="#" class="social-link mono">LinkedIn ↗</a>
+        <a href="#" class="social-link mono">GitHub ↗</a>
+        <a href="#" class="social-link mono">Dribbble ↗</a>
+        <a href="#" class="social-link mono">Twitter ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="mono">© 2026 Alex Morgan</span>
+    <span class="mono">Crafted with care.</span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>
