@@ -1,7 +1,6 @@
 /* ============================================================
-   Portfolio — main.js
-   Handles: custom cursor, theme toggle, nav scroll state,
-            active nav highlighting, scroll-reveal
+   Portfolio — main.js (Retro Pixel Theme)
+   Handles: theme toggle, nav scroll state, active nav highlighting
    ============================================================ */
 
 (function () {
@@ -21,6 +20,10 @@
   function applyTheme(theme) {
     html.setAttribute('data-theme', theme);
     localStorage.setItem(STORAGE_KEY, theme);
+    // Update toggle button icon
+    if (themeToggle) {
+      themeToggle.innerHTML = theme === 'dark' ? '<span class="toggle-icon">☀</span>' : '<span class="toggle-icon">☾</span>';
+    }
   }
 
   function toggleTheme() {
@@ -31,7 +34,9 @@
   // Init on load
   applyTheme(getPreferredTheme());
 
-  themeToggle.addEventListener('click', toggleTheme);
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
 
   // Sync with OS changes if no preference saved
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -40,14 +45,32 @@
     }
   });
 
-
-
-
   /* ── NAV SCROLL STATE ───────────────────────────────────── */
   const nav = document.getElementById('nav');
 
   function onScroll() {
     if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // Init
+
+  /* ── SMOOTH SCROLL FOR ANCHOR LINKS ──────────────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+})();
       nav.classList.add('scrolled');
     } else {
       nav.classList.remove('scrolled');
