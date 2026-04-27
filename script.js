@@ -41,50 +41,6 @@
   });
 
 
-  /* ── CUSTOM CURSOR ──────────────────────────────────────── */
-  const cursor     = document.getElementById('cursor');
-  const cursorRing = document.getElementById('cursor-ring');
-
-  let mouseX = 0, mouseY = 0;
-  let ringX  = 0, ringY  = 0;
-  let rafId;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top  = mouseY + 'px';
-  });
-
-  // Lerp ring for smooth lag effect
-  function lerp(a, b, t) { return a + (b - a) * t; }
-
-  function animateRing() {
-    ringX = lerp(ringX, mouseX, 0.14);
-    ringY = lerp(ringY, mouseY, 0.14);
-    cursorRing.style.left = ringX + 'px';
-    cursorRing.style.top  = ringY + 'px';
-    rafId = requestAnimationFrame(animateRing);
-  }
-
-  animateRing();
-
-  // Grow ring on interactive elements
-  const interactives = document.querySelectorAll('a, button');
-  interactives.forEach((el) => {
-    el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
-  });
-
-  // Hide cursor when it leaves the window
-  document.addEventListener('mouseleave', () => {
-    cursor.style.opacity     = '0';
-    cursorRing.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    cursor.style.opacity     = '1';
-    cursorRing.style.opacity = null; // let CSS handle
-  });
 
 
   /* ── NAV SCROLL STATE ───────────────────────────────────── */
@@ -212,14 +168,5 @@
   }
 
 
-  /* ── CLEANUP ─────────────────────────────────────────────── */
-  // Cancel rAF loop when page is hidden to save resources
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      cancelAnimationFrame(rafId);
-    } else {
-      animateRing();
-    }
-  });
 
 })();

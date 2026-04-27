@@ -53,45 +53,11 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   transition: var(--transition-theme);
-  cursor: none;
   overflow-x: hidden;
 }
 
-* { cursor: none; }
-
 .mono { font-family: 'DM Mono', monospace; }
 .italic { font-style: italic; }
-
-/* ── CURSOR ── */
-#cursor {
-  position: fixed;
-  width: 8px; height: 8px;
-  background: var(--fg);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: background 0.35s;
-  will-change: transform;
-}
-
-#cursor-ring {
-  position: fixed;
-  width: 32px; height: 32px;
-  border: 1px solid var(--fg);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: width 0.25s, height 0.25s, border-color 0.35s, opacity 0.25s;
-  opacity: 0.5;
-  will-change: transform;
-}
-
-#cursor-ring.hover {
-  width: 48px; height: 48px;
-  opacity: 0.3;
-}
 
 /* ── NAV ── */
 nav {
